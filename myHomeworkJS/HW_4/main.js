@@ -8,7 +8,7 @@ function ploschaKola (r){
 }
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function ploschaCulindr (h, r){
-    return 3.14*h*r^2;
+    return 3.14*h*r * 2;
 }
 // - створити функцію яка приймає масив та виводить кожен його елемент
 function arrayVuvid (array){

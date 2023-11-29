@@ -5,7 +5,7 @@ let ploschaPryam =  (a,b) => a*b;
 let ploschaKola = (r) => r * r * Math.PI;
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-let ploschaCulindr = (h, r) => Math.PI * h * r^2;
+let ploschaCulindr = (h, r) => 2+ Math.PI * h * r;
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 let arrayVuvid = (array) =>{
