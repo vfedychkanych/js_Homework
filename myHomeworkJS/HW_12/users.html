@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+</head>
+<body>
+
+<script>
+  let url = new URL(location.href);
+  let userValue = url.searchParams.get('value')
+  let user = JSON.parse(userValue);
+
+  let p_id = document.createElement('p');
+  let p_name = document.createElement('p');
+  let p_username = document.createElement('p');
+  let p_email = document.createElement('p');
+  let p_address = document.createElement('p');
+  let p_phone = document.createElement('p');
+  let p_website = document.createElement('p');
+  let p_company = document.createElement('p');
+  p_id.innerText = user.id + ')';
+  p_name.innerText ='Name: ' + user.name;
+  p_username.innerText ='UserName: ' +  user.username;
+  p_email.innerText = 'Email: ' + user.email;
+  p_address.innerText = `Adress:
+      Street: ${user.address.street},
+      Suite: ${user.address.suite},
+      City: ${user.address.city},
+      Zipcode: ${user.address.zipcode},
+      Geo:
+            Lat: ${user.address.geo.lat},
+            Lng: ${user.address.geo.lng},
+  `;
+  p_phone.innerText = 'Phone: ' + user.phone;
+  p_website.innerText = 'Website: ' + user.website;
+  p_company.innerText = `Company:
+      Name: ${user.company.name},
+      Catch Phrase: ${user.company.catchPhrase},
+      BS: ${user.company.bs}`
+
+  document.body.appendChild(p_id);
+  document.body.appendChild(p_name);
+  document.body.appendChild(p_username);
+  document.body.appendChild(p_email);
+  document.body.appendChild(p_address);
+  document.body.appendChild(p_phone);
+  document.body.appendChild(p_website);
+  document.body.appendChild(p_company);
+
+</script>
+</body>
+</html>

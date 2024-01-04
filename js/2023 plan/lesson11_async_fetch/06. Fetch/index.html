@@ -16,7 +16,7 @@
         .then(users => {
             for (const user of users) {
                 let div = document.createElement('div');
-                div.innerText = user.username;
+                div.innerText = JSON.stringify(user.address);
                 document.body.appendChild(div);
             }
         });

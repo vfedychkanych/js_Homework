@@ -12,12 +12,12 @@
 <script>
 
     let url = new URL('https://jsonplaceholder.typicode.com/posts');
-    url.searchParams.set('userId', 8);
+    url.searchParams.set('userId', 3);
     url.searchParams.set('asd', 'asfdhasdfhdaf');
     console.log(url.searchParams.get('asd'));
 
 
-    url.searchParams.fetch(url)
+    fetch(url)
         .then(value => value.json())
         .then(value => {
             console.log(value);
