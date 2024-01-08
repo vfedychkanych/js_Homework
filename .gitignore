@@ -76,3 +76,6 @@ private/
 future
 /.idea/
 /.idea/
+js/plan_2023/mini-project/node_modules
+js/plan_2023/mini-project/package.json
+js/plan_2023/mini-project/package-lock.json
