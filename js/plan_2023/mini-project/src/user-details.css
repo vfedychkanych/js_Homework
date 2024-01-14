@@ -39,6 +39,7 @@ p {
     color: #4e4e4e;
 }
 #view-more-button {
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -53,7 +54,7 @@ p {
     background-color: #0056b3;
 }
 .post-container {
-    max-width: 600px;
+    max-width: 15vw;
     margin: 20px auto;
     background-color: #fff;
     padding: 15px;
@@ -74,4 +75,7 @@ p {
 }
 .post-container a:visited {
     color: #4e4e4e;
+}
+.div2row{
+    display: flex;
 }

@@ -31,15 +31,6 @@ p_company.innerText = `Company:
       Catch Phrase: ${user.company.catchPhrase},
       BS: ${user.company.bs}`
 
-document.body.appendChild(p_id);
-document.body.appendChild(p_name);
-document.body.appendChild(p_username);
-document.body.appendChild(p_email);
-document.body.appendChild(p_address);
-document.body.appendChild(p_phone);
-document.body.appendChild(p_website);
-document.body.appendChild(p_company);
-
 let userDetailsContainer = document.createElement('div');
 userDetailsContainer.id = 'user-details';
 
@@ -61,6 +52,8 @@ viewMoreButton.addEventListener('click', function() {
   fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
       .then((value) => value.json())
       .then((json) => {
+        let div_i = 1;
+        let div_2row: HTMLDivElement;
         for (const jsonElement of json) {
           let postContainer = document.createElement('div');
           postContainer.classList.add('post-container');
@@ -68,7 +61,18 @@ viewMoreButton.addEventListener('click', function() {
           a.innerText = `${jsonElement.title}`;
           a.href = './post-details.html?value=' + JSON.stringify(jsonElement);
           postContainer.appendChild(a);
-          document.body.appendChild(postContainer);
+            if (div_i % 5 === 1) {
+                div_2row = document.createElement('div');
+            }
+
+            div_2row.appendChild(postContainer);
+
+            if (div_i % 2 === 0 ) {
+                div_2row.classList.add('div2row');
+                document.body.appendChild(div_2row);
+            }
+
+            div_i++;
         }
       });
 });

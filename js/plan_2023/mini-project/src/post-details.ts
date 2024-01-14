@@ -30,6 +30,8 @@ document.body.appendChild(userDetailsContainer);
 fetch(`https://jsonplaceholder.typicode.com/posts/${user.userId}/comments`)
     .then((value) => value.json())
     .then((json) => {
+        let div_i = 1;
+        let div_2row: HTMLDivElement;
         let h2 = document.createElement('h2');
         h2.innerText = 'Comments:';
         document.body.appendChild(h2);
@@ -48,6 +50,17 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${user.userId}/comments`)
             commentContainer.appendChild(p_name);
             commentContainer.appendChild(p_email);
             commentContainer.appendChild(p_body);
-            document.body.appendChild(commentContainer);
+            if (div_i % 4 === 1) {
+                div_2row = document.createElement('div');
+            }
+
+            div_2row.appendChild(commentContainer);
+
+            if (div_i % 4 === 0 || div_i === json.length) {
+                div_2row.classList.add('div2row');
+                document.body.appendChild(div_2row);
+            }
+
+            div_i++;
         }
     });
